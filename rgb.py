@@ -10,6 +10,7 @@ import Leap, sys, math, time
 from Leap import CircleGesture, KeyTapGesture, ScreenTapGesture, SwipeGesture
 
 import serial
+import time
 
 sout = None
 
@@ -167,6 +168,8 @@ def main():
     global sout
     port_name = raw_input("Enter Arduino port name: ")
     sout = serial.Serial(port_name, 9600, timeout=0)
+    print("Initializing...")
+    time.sleep(3)
 
     # Create a sample listener and controller
     listener = SampleListener()
